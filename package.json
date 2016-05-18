@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/michael-fei/rgrjs.com/issues"
   },
-  "homepage": "https://github.com/michael-fei/rgrjs.com#readme"
+  "homepage": "https://github.com/michael-fei/rgrjs.com#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }

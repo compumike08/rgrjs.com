@@ -4,7 +4,7 @@
   "description": "A collection of educational resources about React, GraphQL, and Relay",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "babel-node --presets react,es2015 server.js"
   },
   "repository": {
     "type": "git",

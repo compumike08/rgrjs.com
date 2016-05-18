@@ -1,0 +1,19 @@
+{
+  "name": "rgrjs",
+  "version": "1.0.0",
+  "description": "A collection of educational resources about React, GraphQL, and Relay",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michael-fei/rgrjs.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michael-fei/rgrjs.com/issues"
+  },
+  "homepage": "https://github.com/michael-fei/rgrjs.com#readme"
+}

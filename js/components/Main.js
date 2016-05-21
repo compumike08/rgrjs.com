@@ -15,10 +15,11 @@ export default class Main extends React.Component {
 		limit: 4
 	}
 	
+	state = _getAppState();
+	
 	constructor(props){
 		super(props);
 		
-		this.state = _getAppState();
 		this.onChange = this.onChange.bind(this);
 	}
 	componentDidMount(){

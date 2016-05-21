@@ -17,11 +17,6 @@ export default class Main extends React.Component {
 	
 	state = _getAppState();
 	
-	constructor(props){
-		super(props);
-		
-		this.onChange = this.onChange.bind(this);
-	}
 	componentDidMount(){
 		API.fetchLinks();
 		LinkStore.on("change", this.onChange);
@@ -29,7 +24,7 @@ export default class Main extends React.Component {
 	componentWillUnmount(){
 		LinkStore.removeListener("change", this.onChange);
 	}
-	onChange() {
+	onChange = () => {
 		console.log("4. In the View");
 		this.setState(_getAppState());
 	}

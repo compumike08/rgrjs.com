@@ -45,7 +45,10 @@ let Schema = (db) => {
 			},
 			title: { type: GraphQLString},
 			url: { type: GraphQLString},
-			createdAt: { type: GraphQLString }
+			createdAt: {
+				type: GraphQLString,
+				resolve: (obj) => new Date(obj.createdAt).toISOString()
+			}
 		})
 	});
 	

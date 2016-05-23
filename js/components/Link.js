@@ -1,12 +1,17 @@
 import React from "react";
 import Relay from "react-relay";
+import moment from "moment";
 
 class Link extends React.Component {
+	dateLabel = () => moment(this.props.link.createdAt).format('L')
 	render() {
 		let {link} = this.props;
 		return (
 			<li>
-				<a href={link.url}>{link.title}</a><span> - Created At: {link.createdAt}</span>
+				<span>
+				{this.dateLabel()}
+				</span>
+				<a href={link.url}>{link.title}</a>
 			</li>
 		);
 	}

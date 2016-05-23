@@ -20,10 +20,13 @@ class Main extends React.Component {
 }
 
 Main = Relay.createContainer(Main, {
+	initialVariables: {
+		limit: 3
+	},
 	fragments: {
 		store: () => Relay.QL`
 			fragment on Store {
-				linkConnection(first: 5) {
+				linkConnection(first: $limit) {
 					edges {
 						node {
 							id,

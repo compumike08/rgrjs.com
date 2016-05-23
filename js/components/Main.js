@@ -7,7 +7,7 @@ class Main extends React.Component {
 	}
 	
 	static defaultProps = {
-		limit: 4
+		limit: 5
 	}
 	
 	render() {

@@ -33,8 +33,9 @@ class Main extends React.Component {
 					<input type="text" placeholder="Url" ref="newUrl" />
 					<button type="submit">Add</button>
 				</form>
-				<select onChange={this.setLimit}>
-					<option value="100" selected>100</option>
+				<select onChange={this.setLimit}
+						defaultValue={this.props.relay.variables.limit} >
+					<option value="100">100</option>
 					<option value="200">200</option>
 				</select>
 				<ul>

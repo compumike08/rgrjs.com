@@ -44,7 +44,8 @@ let Schema = (db) => {
 				resolve: (obj) => obj._id
 			},
 			title: { type: GraphQLString},
-			url: { type: GraphQLString}
+			url: { type: GraphQLString},
+			createdAt: { type: GraphQLString }
 		})
 	});
 	

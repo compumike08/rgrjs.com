@@ -6,7 +6,7 @@ class Link extends React.Component {
 		let {link} = this.props;
 		return (
 			<li>
-				<a href={link.url}>{link.title}</a>
+				<a href={link.url}>{link.title}</a><span> - Created At: {link.createdAt}</span>
 			</li>
 		);
 	}
@@ -18,6 +18,7 @@ Link = Relay.createContainer(Link, {
 			fragment on Link {
 				url,
 				title,
+				createdAt,
 			}
 		`
 	}

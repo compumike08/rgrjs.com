@@ -34,6 +34,7 @@
     "graphql-relay": "^0.4.1",
     "jquery": "^2.2.3",
     "kerberos": "0.0.21",
+    "moment": "^2.13.0",
     "mongodb": "^2.1.19",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",

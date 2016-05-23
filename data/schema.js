@@ -59,7 +59,7 @@ let Schema = (db) => {
 		outputFields: {
 			linkEdge: {
 				type: linkConnection.edgeType,
-				resolve: (obj) => ({node: obj.ops[0], cursor: obj.insertedIn})
+				resolve: (obj) => ({node: obj.ops[0], cursor: obj.insertedId})
 			},
 			store: {
 				type: storeType,

@@ -8,10 +8,10 @@ class Main extends React.Component {
 	setLimit = (e) => {
 		let newLimit = Number(e.target.value);
 		this.props.relay.setVariables({limit: newLimit});
-	}
+	};
 	handleSubmit = (e) => {
 		e.preventDefault();
-		Relay.Store.update(
+		Relay.Store.commitUpdate(
 			new CreateLinkMutation({
 				title: this.refs.newTitle.value,
 				url: this.refs.newUrl.value,
@@ -20,7 +20,7 @@ class Main extends React.Component {
 		);
 		this.refs.newTitle.value = "";
 		this.refs.newUrl.value = "";
-	}
+	};
 	render() {
 		let content = this.props.store.linkConnection.edges.map(edge => {
 			return <Link key={edge.node.id} link={edge.node} />
@@ -43,7 +43,7 @@ class Main extends React.Component {
 				</ul>
 			</div>
 		);
-	}
+	};
 }
 
 Main = Relay.createContainer(Main, {

@@ -18,7 +18,7 @@ class CreateLinkMutation extends Relay.Mutation {
 		return Relay.QL`
 			fragment on CreateLinkPayload {
 				linkEdge,
-				store { linkConnection, },
+				store { linkConnection },
 			}
 		`;
 	}

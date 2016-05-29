@@ -1,17 +1,20 @@
 import React from "react";
 import Relay from "react-relay";
+import {debounce} from "lodash";
 
 import Link from "./Link";
 import CreateLinkMutation from "../mutations/CreateLinkMutation";
 
 class Main extends React.Component {
+	constructor(props) {
+		super(props);
+		this.setVariables = debounce(this.props.relay.setVariables, 300);
+	};
 	search = (e) => {
-		let query = e.target.value;
-		this.props.relay.setVariables({query});
+		this.setVariables({query: e.target.value});
 	};
 	setLimit = (e) => {
-		let newLimit = Number(e.target.value);
-		this.props.relay.setVariables({limit: newLimit});
+		this.setVariables({limit: Number(e.target.value)});
 	};
 	handleSubmit = (e) => {
 		e.preventDefault();

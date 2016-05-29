@@ -5,6 +5,10 @@ import Link from "./Link";
 import CreateLinkMutation from "../mutations/CreateLinkMutation";
 
 class Main extends React.Component {
+	search = (e) => {
+		let query = e.target.value;
+		this.props.relay.setVariables({query});
+	};
 	setLimit = (e) => {
 		let newLimit = Number(e.target.value);
 		this.props.relay.setVariables({limit: newLimit});
@@ -33,6 +37,8 @@ class Main extends React.Component {
 					<input type="text" placeholder="Url" ref="newUrl" />
 					<button type="submit">Add</button>
 				</form>
+				Showing: &nbsp;
+				<input type="text" placeholder="Search" onChange={this.search} />
 				<select onChange={this.setLimit}
 						defaultValue={this.props.relay.variables.limit} >
 					<option value="100">100</option>
@@ -48,13 +54,14 @@ class Main extends React.Component {
 
 Main = Relay.createContainer(Main, {
 	initialVariables: {
-		limit: 100
+		limit: 100,
+		query: ''
 	},
 	fragments: {
 		store: () => Relay.QL`
 			fragment on Store {
 				id,
-				linkConnection(first: $limit) {
+				linkConnection(first: $limit, query: $query) {
 					edges {
 						node {
 							id,

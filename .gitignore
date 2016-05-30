@@ -1,4 +1,7 @@
 node_modules/
+*.log
 bundle.js*
 data/schema.json
 dist
+
+config/*.json

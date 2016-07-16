@@ -12,6 +12,7 @@ RGR.js
 
 ## Compiling and Running In a 'Production' Enviornment
 To compile the application for deployment in a 'production' enviornment, do the following:
+
 1. Run the command `npm run build`.
 2. Run the command `npm run serve`.
 

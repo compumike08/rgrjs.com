@@ -4,7 +4,8 @@
   "description": "A collection of educational resources about React, GraphQL, and Relay",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack -w -d",
+    "webpack": "webpack -d",
+	"webpack-watch": "webpack -w -d",
     "start": "nodemon --exec babel-node --presets react,es2015,stage-0 lib/server.js",
     "build": "babel lib -d dist --presets react,es2015,stage-0",
     "serve": "babel-node --presets react,es2015,stage-0 dist/server.js"
